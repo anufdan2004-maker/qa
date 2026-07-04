@@ -12,7 +12,6 @@ import static org.hamcrest.Matchers.*;
 
 /**
  * API-тесты для публичного сервиса JSONPlaceholder (https://jsonplaceholder.typicode.com).
- * Проверяются основные CRUD-операции над ресурсом /posts.
  */
 public class PostsApiTest {
 
@@ -79,7 +78,6 @@ public class PostsApiTest {
                     .body("userId", equalTo(1))
                     .extract().response();
 
-        // JSONPlaceholder — фейковый бэкенд, id всегда генерируется как 101
         int newId = response.jsonPath().getInt("id");
         org.junit.jupiter.api.Assertions.assertEquals(101, newId);
     }
